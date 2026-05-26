@@ -1,0 +1,16 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic-settings==2.7.1
+python-multipart==0.0.20
+PyYAML==6.0.2
+
+# ML stack used by later training and inference steps.
+torch==2.5.1
+transformers==4.48.0
+pillow==11.1.0
+numpy==2.2.1
+
+# Development and verification.
+pytest==8.3.4
+httpx==0.28.1
+ruff==0.8.4

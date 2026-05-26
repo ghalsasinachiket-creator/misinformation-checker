@@ -1,0 +1,31 @@
+project:
+  name: misinformation-checker
+  seed: 42
+
+data:
+  dataset_name: newsclippings
+  data_dir: data/newsclippings
+  image_dir: data/newsclippings/images
+  train_split: train
+  validation_split: val
+  test_split: test
+
+model:
+  clip_model_name: openai/clip-vit-base-patch32
+  num_labels: 2
+  label_names:
+    - matched
+    - mismatched
+
+training:
+  output_dir: artifacts/checkpoints
+  batch_size: 16
+  learning_rate: 0.00002
+  weight_decay: 0.01
+  epochs: 3
+  warmup_ratio: 0.1
+  mixed_precision: true
+
+explainability:
+  gradcam_layer: vision_model.encoder.layers.-1
+  output_dir: artifacts/explanations
